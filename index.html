@@ -1736,7 +1736,7 @@ async function renderUsuarios(){
       <div class="usuario-email">
         ${escapeHtml(u.email)} ${pendente && !aguardandoAprovacao ? '<span class="usuario-pendente-tag">pendente</span>' : ''}
         ${aguardandoAprovacao ? `<span class="usuario-pendente-tag">aguardando aprovação: ${escapeHtml(jogadorSolicitado ? jogadorSolicitado.nome : '?')}</span>` : ''}
-        <div class="usuario-sub">${escapeHtml(u.nome || 'sem nome')}${u.criadoEm ? ' · entrou em ' + escapeHtml(u.criadoEm) : ''}</div>
+        <div class="usuario-sub">${escapeHtml(u.nome || 'sem nome')}${u.criadoEm ? ' · entrou em ' + escapeHtml(formatDate(u.criadoEm)) : ''}</div>
       </div>
       ${souAdmin ? `
       <select class="usuario-perfil-select">
