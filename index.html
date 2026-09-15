@@ -14,6 +14,9 @@
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAFlUlEQVR42u3cIXYUSwCF4e46cYjgkBHxxONZADvgrYC1sALYAQvA48EjkDgi0CB4eS/kTKZ7pnumq+p+vwPOCaFz/7q3khnGoTKeXT7/NaBbvt9+GWv6fEZhR7IUo9AjWYZR8JEswij4SBZhFHwkizAKPpJFKMKPllg7Y6PgI7kNivAjuQ2K8CNZgiL8SJagCD+SJSjCj2QJivAjWYIi/EiWoAg/kiUowo9kCYrHhGSK0x/JLVCEH8kSmEAwgZz+SG0BDQAN4PRHagtoAEQzOv1Py9dvnxd/jOurGw9yRe6/k+zC46gn6Id+bGKs2ABO/3oCrynO1wIaoPHQP/b5kWEeBDhx6F9evtv7559eP538GD/fviLDKSeQ+bM89FNBXyLAmmKQ4e8ZpAGODP6xgV+TJ28+HCzE3b+RCCbQwcGvIfRzhZiSgQgEmBX82kO/VIZ0ES4Ev6/g75OBCDsuwWkX4Knwnzv4Sy7Bp7o8J0kQI0Btwd9SACKECbAv/FtPnS0FmCNC7xJ0LUDNwa9JgGQRuhXgsfDXdrmtSYApEXqUoAg/HvLwB2xz71EEqCD4wn96CXoSoZsJ1Grwa5xASZOoCD+SJ1ERfiRL0PQE2vXwWwt+CxNoziRqdQ4V4ccabdBqExThR7IERfiRLEERfiRLUIQfyRI0ewkW/volIMAJT3/4ukUIYPqYQrECCD8JTCDhdx9IFMDudx+IFcD0MYVMIOE3hRIFeHhKCH9fEtTWAqXm8MN9IHoCOf1NoRgBnP5aQAM4/bVAogBOfy2gAZz+WiBRAKe/FtAATn8tkCiA0x9b56CqBnD6awGXYCBBAK/50QI1zCANAA0AEMD8QeAM0gDQAAABzB8EziANAA0AEAAggP2PrHuABoAGAAgAEAAgAECAtfEdIOxjq+8EaQBoAIAAAAEAAgAEAAgAEADol4ut/uJPr596+v/y4v0PD2EYho+3GgAgAEAAgAAAAQACAAQAWhXg+urmr1//fPvK08d/fLz9Z29eNABAAIAAAAEAAgAtCeA7QdjFVt8B0gDQAB4BCAAQwD0AWftfA0ADeAQggBmEwPmjAaABPAIQwAxC4PzRANAANX0yWiDz9I8VYKvaQ11smYPqJpAWcPpHCaAFnP7uAFrA6Z8sgBZw+msALeD0TxZACzj9NYAWcPonC6AFnP7xDeA1Qn2f/rUdck28FogEpk+UALtOCRK0H/4aJ261DeA+YPebQFrA9EkWwBQyfeIbgATCHz+B3AfsfncALWD3JwtgCpk+8Q1AAuGPn0AkEP74OwAJhD/+EkwC4V+D8dnl818tfzG+fvu88/efvPnQzL/hxfsfzQa/5fA33QBTD18bCH+EACQQ/ugJNGcO1T6Jap1A+3641ctP57v6z3Gvr260wRlO/Z5emtLl/w5NApMncgK1OolqmUAJkydKgFZE2FqAxOBHCTAlwdYibCXA1Cs4E16GPg7DMKRIUKsI5xZA8P/w/fbLeJF2wbu+utkrwd1FuaWfJK8V/KTw3xEnwP0vcooIgk+AxSK0JsPcd2ilv900WoBDRGhBhkPeluh91vcuwWkX4aUX5bUvz8dego95H67g/38B1gAzQjJXhsd+yrxGUyx9w7nQa4DNmqEGifF4A4z3f5MEbcsg9IeF3wRaMWxbCCHwK04gLVBvUwj6aU5/DeCUjqdMGQL0evrvFACIbgAtgJTTXwNAAxxqDNDL6T/ZACRAz+E3gWACLTUIaPX0n90AJECP4T9oApEAvYX/4DsACdBT+I+6BJMAvYT/KAFIgF7Cf7QAJEAP4V8kAAnQevgXC0ACtBz+YdjxjrAleDcZWgn+ag2gDdBq+FdvAG2AVoJ/cgGIgBZWxdkmCxFQ45w++2YnAmq6R256aSUDtgh9NQKQQti35jfpOgJGYsHoJAAAAABJRU5ErkJggg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!-- Tabler Icons — usado nos ícones "ti ti-*" espalhados pelo app (estados vazios,
+     botões de compartilhar/copiar, etc.) -->
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.46.0/dist/tabler-icons.min.css" rel="stylesheet">
 <!-- Google Identity Services: renderiza o botão "Entrar com Google" e devolve um ID Token
      assinado pelo Google. A função global window.onGoogleLibraryLoad (definida no bloco
      de script principal, mais abaixo) é o gancho oficial pra saber que a biblioteca
@@ -774,10 +777,24 @@
     padding:10px 16px;border-radius:10px;margin-bottom:16px;font-size:14px;
   }
   .checkin-admin-controls{
-    display:flex;gap:10px;align-items:center;flex-wrap:wrap;
     background:var(--court-navy-2);border:1px solid var(--ball-yellow);border-radius:10px;
     padding:12px 14px;margin-bottom:16px;
   }
+  .checkin-admin-row{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;}
+  .checkin-admin-field{display:flex;flex-direction:column;gap:4px;}
+  .checkin-admin-field label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:0.4px;}
+  .checkin-admin-ajustes{
+    margin-top:10px;padding-top:10px;border-top:1px solid var(--line);
+  }
+  .checkin-admin-ajustes summary{
+    list-style:none;cursor:pointer;color:var(--muted);font-size:12px;
+    text-transform:uppercase;letter-spacing:0.4px;user-select:none;
+    display:flex;align-items:center;gap:6px;
+  }
+  .checkin-admin-ajustes summary::-webkit-details-marker{display:none;}
+  .checkin-admin-ajustes summary::after{content:'▾';margin-left:2px;transition:transform .2s;}
+  .checkin-admin-ajustes[open] summary::after{transform:rotate(180deg);}
+  .checkin-admin-ajustes-body{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-top:10px;}
 
   /* interruptor de visibilidade das estrelas (somente admin) */
   .star-toggle{
@@ -808,10 +825,28 @@
   .selected-counter-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
 
   .equilibrio-badge{
-    display:inline-block;background:var(--court-navy-2);border:1px solid var(--ball-yellow);
-    border-radius:20px;padding:8px 16px;font-size:13px;color:var(--chalk-dim);margin-bottom:14px;
+    display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+    background:var(--court-navy-2);border:2px solid var(--ball-yellow);
+    border-radius:14px;padding:12px 18px;font-size:14px;color:var(--chalk-dim);margin-bottom:14px;
+    text-align:center;
   }
-  .equilibrio-badge strong{color:var(--ball-yellow);}
+  .equilibrio-badge strong{font-family:'Anton',sans-serif;font-size:24px;letter-spacing:0.5px;color:var(--ball-yellow);}
+  .equilibrio-badge.nivel-alto{border-color:#5fd68a;}
+  .equilibrio-badge.nivel-alto strong{color:#5fd68a;}
+  .equilibrio-badge.nivel-baixo{border-color:#e5793a;}
+  .equilibrio-badge.nivel-baixo strong{color:#e5793a;}
+
+  /* linha de ações que deve ocupar a largura toda, com botões grandes esticando
+     e os botões de compartilhar (ícone só) ficando compactos no fim da linha */
+  .acoes-linha{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch;margin-bottom:14px;}
+  .acoes-linha .btn{flex:1 1 160px;}
+  .acoes-linha .btn-icon{flex:0 0 auto;}
+  .btn-icon{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:40px;height:40px;padding:0;font-size:17px;line-height:1;
+  }
+  .btn-icon svg{width:18px;height:18px;display:block;flex-shrink:0;}
+  .btn-icon.copiado{background:#1f3a2a!important;border-color:#5fd68a!important;color:#8ff0ae!important;}
 </style>
 </head>
 <body>
@@ -903,8 +938,9 @@
         🔔 <strong id="usuarios-pendentes-texto"></strong>
       </div>
       
-      <div style="display:flex;justify-content:flex-end;margin-bottom:10px;">
-        <button class="btn secondary" id="share-weekly-whatsapp-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" style="vertical-align:-2px;margin-right:2px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12.031 0C5.437 0 .062 5.373.062 11.984c0 2.107.55 4.09 1.51 5.813L0 24l6.35-1.664a11.925 11.925 0 005.681 1.447h.005c6.594 0 11.968-5.373 11.968-11.985C24.004 5.373 18.63.007 12.03.007zm0 21.746h-.004a9.75 9.75 0 01-4.978-1.363l-.357-.213-3.702.972.988-3.612-.233-.371a9.717 9.717 0 01-1.492-5.176c0-5.376 4.375-9.75 9.782-9.75 2.613 0 5.07 1.02 6.916 2.868a9.72 9.72 0 012.865 6.918c-.001 5.377-4.376 9.727-9.785 9.727z"/></svg>Gerar resumo da semana</button>
+      <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
+        <button class="btn secondary" id="share-weekly-whatsapp-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" style="vertical-align:-2px;margin-right:2px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12.031 0C5.437 0 .062 5.373.062 11.984c0 2.107.55 4.09 1.51 5.813L0 24l6.35-1.664a11.925 11.925 0 005.681 1.447h.005c6.594 0 11.968-5.373 11.968-11.985C24.004 5.373 18.63.007 12.03.007zm0 21.746h-.004a9.75 9.75 0 01-4.978-1.363l-.357-.213-3.702.972.988-3.612-.233-.371a9.717 9.717 0 01-1.492-5.176c0-5.376 4.375-9.75 9.782-9.75 2.613 0 5.07 1.02 6.916 2.868a9.72 9.72 0 012.865 6.918c-.001 5.377-4.376 9.727-9.785 9.727z"/></svg>Resumo da semana</button>
+        <span id="share-weekly-extra-area"></span>
       </div>
       <div id="dash-hero"></div>
       <div class="netline"></div>
@@ -951,16 +987,29 @@
       <div id="checkin-status"></div>
 
       <div class="checkin-admin-controls" id="checkin-admin-controls" style="display:none;">
-        <label style="color:var(--muted);font-size:13px;">Data do próximo jogo</label>
-        <input type="date" id="checkin-admin-date">
-        <button class="btn" id="open-checkin-btn">Abrir check-in</button>
-        <button class="btn secondary" id="close-checkin-btn">Fechar check-in</button>
-        <button class="btn secondary" id="toggle-checkin-lock-btn">🔒 Travar inclusões/exclusões</button>
-        <label style="color:var(--muted);font-size:13px;">Vagas</label>
-        <input type="number" id="checkin-admin-vagas" min="1" style="width:70px;">
-        <label style="color:var(--muted);font-size:13px;">Horário</label>
-        <input type="time" id="checkin-admin-horario" style="width:100px;">
-        <button class="btn secondary" id="checkin-msg-config-btn" title="Editar mensagem de compartilhar">⚙️ Mensagem</button>
+        <div class="checkin-admin-row">
+          <div class="checkin-admin-field">
+            <label for="checkin-admin-date">Data do próximo jogo</label>
+            <input type="date" id="checkin-admin-date">
+          </div>
+          <button class="btn" id="open-checkin-btn">Abrir check-in</button>
+          <button class="btn secondary" id="close-checkin-btn">Fechar check-in</button>
+          <button class="btn secondary" id="toggle-checkin-lock-btn">🔒 Travar inclusões/exclusões</button>
+        </div>
+        <details class="checkin-admin-ajustes">
+          <summary>⚙️ Ajustes do check-in (vagas, horário, mensagem)</summary>
+          <div class="checkin-admin-ajustes-body">
+            <div class="checkin-admin-field">
+              <label for="checkin-admin-vagas">Vagas</label>
+              <input type="number" id="checkin-admin-vagas" min="1" style="width:70px;">
+            </div>
+            <div class="checkin-admin-field">
+              <label for="checkin-admin-horario">Horário</label>
+              <input type="time" id="checkin-admin-horario" style="width:100px;">
+            </div>
+            <button class="btn secondary" id="checkin-msg-config-btn" title="Editar mensagem de compartilhar">⚙️ Mensagem</button>
+          </div>
+        </details>
       </div>
 
       <div id="checkin-login-aviso" style="display:none;color:var(--muted);font-size:13px;margin:0 0 12px;">🔒 Entre com sua conta Google pra confirmar presença (ver a lista continua livre).</div>
@@ -990,9 +1039,9 @@
       <div id="checkin-ordenados"></div>
       <div class="search-box" id="checkin-search-box"><input type="text" id="checkin-search" placeholder="Buscar seu nome..."></div>
       <div class="select-list" id="checkin-list"></div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+      <div class="acoes-linha" style="margin-top:12px;">
         <button class="btn" id="use-checkins-sorteio-btn">Usar confirmados no Sorteio →</button>
-        <button class="btn secondary" id="share-checkins-whatsapp-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" style="vertical-align:-2px;margin-right:2px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12.031 0C5.437 0 .062 5.373.062 11.984c0 2.107.55 4.09 1.51 5.813L0 24l6.35-1.664a11.925 11.925 0 005.681 1.447h.005c6.594 0 11.968-5.373 11.968-11.985C24.004 5.373 18.63.007 12.03.007zm0 21.746h-.004a9.75 9.75 0 01-4.978-1.363l-.357-.213-3.702.972.988-3.612-.233-.371a9.717 9.717 0 01-1.492-5.176c0-5.376 4.375-9.75 9.782-9.75 2.613 0 5.07 1.02 6.916 2.868a9.72 9.72 0 012.865 6.918c-.001 5.377-4.376 9.727-9.785 9.727z"/></svg>Compartilhar confirmados no WhatsApp</button>
+        <span id="share-checkins-whatsapp-area"></span>
       </div>
     </section>
 
@@ -1147,26 +1196,29 @@
       <div class="select-list" id="sorteio-select-list"></div>
 
       <div id="sorteio-auto-panel">
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <div class="acoes-linha">
           <button class="btn" id="sortear-btn">Sortear times equilibrados</button>
           <button class="btn secondary" id="montar-grupos-auto-btn">Montar grupos por nível</button>
           <button class="btn secondary" id="importar-checkin-auto-btn" style="display:none;">📋 Importar jogadores do check-in</button>
         </div>
         <p style="color:var(--muted);font-size:12px;margin:10px 0 0;">Montar grupos por nível separa os participantes por nota (mulheres sempre no(s) último(s) grupo(s)) — depois disso, o sorteio automático distribui os times respeitando as mesmas regras de sempre, garantindo ainda que nenhum time fique com 2 pessoas do mesmo grupo juntas.</p>
         <div id="auto-groups" class="draft-grid" style="margin-top:16px;"></div>
-        <button class="btn" id="sortear-com-grupos-btn" style="display:none;margin-top:16px;">🎯 Sorteio automático (respeitando os grupos)</button>
+        <div class="acoes-linha" id="auto-groups-acoes" style="display:none;margin-top:16px;">
+          <button class="btn" id="sortear-com-grupos-btn">🎯 Sorteio automático (respeitando os grupos)</button>
+          <span id="share-groups-auto-whatsapp-area"></span>
+        </div>
       </div>
 
       <div id="sorteio-manual-panel" style="display:none;">
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <div class="acoes-linha">
           <button class="btn" id="montar-grupos-btn">Montar grupos por nível</button>
           <button class="btn secondary" id="importar-checkin-manual-btn" style="display:none;">📋 Importar jogadores do check-in</button>
         </div>
         <p style="color:var(--muted);font-size:12px;margin:10px 0 0;">Os participantes selecionados são separados em grupos por nota (cabeças de chave primeiro), com as mulheres sempre no(s) último(s) grupo(s). Arraste pra ajustar antes de sortear.</p>
         <div id="manual-groups" class="draft-grid" style="margin-top:16px;"></div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+        <div class="acoes-linha" style="margin-top:16px;">
           <button class="btn" id="iniciar-sorteio-manual-btn" style="display:none;">Iniciar sorteio 🎯</button>
-          <button class="btn secondary" id="share-groups-whatsapp-btn" style="display:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" style="vertical-align:-2px;margin-right:2px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12.031 0C5.437 0 .062 5.373.062 11.984c0 2.107.55 4.09 1.51 5.813L0 24l6.35-1.664a11.925 11.925 0 005.681 1.447h.005c6.594 0 11.968-5.373 11.968-11.985C24.004 5.373 18.63.007 12.03.007zm0 21.746h-.004a9.75 9.75 0 01-4.978-1.363l-.357-.213-3.702.972.988-3.612-.233-.371a9.717 9.717 0 01-1.492-5.176c0-5.376 4.375-9.75 9.782-9.75 2.613 0 5.07 1.02 6.916 2.868a9.72 9.72 0 012.865 6.918c-.001 5.377-4.376 9.727-9.785 9.727z"/></svg>Compartilhar grupos no WhatsApp</button>
+          <span id="share-groups-whatsapp-area" style="display:none;"></span>
         </div>
         <div id="roleta-container"></div>
       </div>
@@ -1320,7 +1372,7 @@
   </div>
 
   <footer class="app-footer">
-    <div class="footer-line">Ver.: 5.4 · <span id="visit-counter"></span></div>
+    <div class="footer-line">Ver.: 5.10 · <span id="visit-counter"></span></div>
     <div class="footer-line">By: <a href="https://www.instagram.com/helenovilela/" target="_blank" rel="noopener noreferrer" class="footer-link">Heleno Vilela</a> — todos direitos reservados</div>
     <div class="footer-line"><span class="footer-link-discreto" id="report-bug-btn">Informar bug / sugerir funcionalidade</span></div>
   </footer>
@@ -1331,7 +1383,7 @@ let DATA = { players: [], rounds: [] };
 const CHECKIN_MENSAGEM_PADRAO = 'Vôlei {diaSemana} {data} às {horario} horas, quem animar coloca o nome abaixo o mais rápido possível blz pessoal.\nOs {vagas} primeiros a enviarem o nome estarão no jogo';
 let SETTINGS = { estrelasVisiveis: true, checkinDataAberta: '', checkinTravado: false, checkinVagas: 16, checkinHorario: '20:00', checkinMensagemTemplate: CHECKIN_MENSAGEM_PADRAO };
 let CHECKINS = [];
-let PERFIS_PUBLICOS = []; // [{jogadorId, perfil}] — só admin/organizador vinculados, sem e-mail (ver perfisPublicos_ no .gs)
+let PERFIS_PUBLICOS = []; // [{jogadorId, perfil}] — todo jogador vinculado a uma conta (qualquer perfil), sem e-mail (ver perfisPublicos_ no .gs)
 
 /* Quem está logado com conta Google agora. O idToken é o que prova a identidade pro
    Apps Script — ele vive ~1h e é renovado em segundo plano (ver garantirTokenFresco).
@@ -2796,7 +2848,7 @@ function renderPlayers(){
       <div class="with-avatar">
         ${avatarHtml(p)}
         <div>
-          <div class="name clickable-name" data-open-profile="${p.id}">${escapeHtml(p.nome)}${badgeIconsHtml(p.id, badges)}</div>
+          <div class="name clickable-name" data-open-profile="${p.id}">${contaVinculadaIconHtml(p.id)}${escapeHtml(p.nome)}${badgeIconsHtml(p.id, badges)}</div>
           ${p.apelido ? `<div class="sub">"${escapeHtml(p.apelido)}"</div>` : ''}
           <div class="meta-row">
             ${starsVisibleNow() ? starsDisplay(p.estrelas) : ''}
@@ -3656,6 +3708,17 @@ function computeBadges(){
   return { top1, paneleiro, mochila, grudento, rip, cabecaDeChave, aposentado, staffAdmin, staffOrganizador };
 }
 
+// ícone ANTES do nome (diferente dos badges, que vêm depois) — indica que esse
+// jogador tem uma conta Google vinculada, seja qual for o perfil dela
+function temContaVinculada(pid){
+  return PERFIS_PUBLICOS.some(u=> u.jogadorId === pid);
+}
+function contaVinculadaIconHtml(pid){
+  return temContaVinculada(pid)
+    ? `<span class="badge-icon" title="Jogador com conta cadastrada no app">👤</span> `
+    : '';
+}
+
 function badgeIconsHtml(pid, badges){
   if(!pid || !badges) return '';
   let html = '';
@@ -4227,12 +4290,21 @@ function renderCheckinStatus(){
   const searchBox = document.getElementById('checkin-search-box');
   const guestRow = document.getElementById('checkin-guest-row');
   const useBtn = document.getElementById('use-checkins-sorteio-btn');
-  const shareBtn = document.getElementById('share-checkins-whatsapp-btn');
+  const shareArea = document.getElementById('share-checkins-whatsapp-area');
   const loginAviso = document.getElementById('checkin-login-aviso');
   if(searchBox) searchBox.style.display = data ? 'block' : 'none';
   if(guestRow) guestRow.style.display = (data && !travado && AUTH.logado) ? 'flex' : 'none';
   if(useBtn) useBtn.style.display = data ? 'inline-block' : 'none';
-  if(shareBtn) shareBtn.style.display = data ? 'inline-block' : 'none';
+  if(shareArea){
+    if(data && !shareArea.dataset.wired){
+      shareArea.innerHTML = botoesCompartilharHtml('share-checkins');
+      wireBotoesCompartilhar('share-checkins', montarTextoCheckinsWhatsApp);
+      shareArea.dataset.wired = '1';
+    } else if(!data){
+      shareArea.innerHTML = '';
+      delete shareArea.dataset.wired;
+    }
+  }
   if(loginAviso) loginAviso.style.display = (data && !travado && !AUTH.logado) ? 'block' : 'none';
 }
 
@@ -4485,12 +4557,12 @@ function preencherMensagemCheckin(template, data){
     .replace(/\{vagas\}/g, vagas);
 }
 
-document.getElementById('share-checkins-whatsapp-btn').addEventListener('click', ()=>{
+function montarTextoCheckinsWhatsApp(){
   const data = SETTINGS.checkinDataAberta;
   const { dentro, reserva } = checkinsDentroEReserva(data);
   if(dentro.length===0 && reserva.length===0){
     alert('Ninguém confirmou presença para essa data ainda.');
-    return;
+    return '';
   }
   let texto = preencherMensagemCheckin(SETTINGS.checkinMensagemTemplate, data) + '\n\n';
   dentro.forEach((c,i)=>{ texto += `${i+1}- ${c.jogadorNome || 'Convidado'}\n`; });
@@ -4498,8 +4570,8 @@ document.getElementById('share-checkins-whatsapp-btn').addEventListener('click',
     texto += `\nEspera:\n\n`;
     reserva.forEach((c,i)=>{ texto += `${i+1}- ${c.jogadorNome || 'Convidado'}\n`; });
   }
-  compartilharNoWhatsApp(texto);
-});
+  return texto;
+}
 
 /* ---------- engrenagem: editar o texto de abertura da mensagem de compartilhar ---------- */
 function abrirConfigMensagemCheckin(){
@@ -4624,6 +4696,16 @@ function shuffleArray(arr){
 
 function pesoDe(p){ return (p && p.estrelas > 0) ? p.estrelas : 3; }
 function somaTime(team){ return team.reduce((s,p)=> s + pesoDe(p), 0); }
+
+// média de pontos por time — usada como base do equilíbrio EM PORCENTAGEM (não em pontos
+// fixos), porque 1 ponto de diferença é bem mais grave numa pelada pequena (poucos
+// jogadores, soma baixa) do que numa pelada grande. É a régua usada nas etapas de ajuste
+// fino abaixo pra decidir quanto elas podem "gastar" do equilíbrio de notas já alcançado.
+function mediaPontosPorTime(teams){
+  const total = teams.reduce((s,t)=> s + somaTime(t), 0);
+  return teams.length ? (total / teams.length) : 0;
+}
+const TOLERANCIA_PERCENTUAL_AJUSTE_FINO = 5; // % da média de pontos por time
 
 function trocaViolaGrupo(gruposMap, timeDestino, jogadorQueEntra, jogadorQueSai){
   // usado só quando o sorteio partiu de grupos por nível — garante que nenhuma troca
@@ -4792,9 +4874,12 @@ function pesoAltura(p){
 
 function equilibrarAltura(teams, numTeams, tetoCincoEstrelas, gruposMap){
   // ajuste fino de altura — roda DEPOIS do equilíbrio de notas já feito, e só troca
-  // jogador se isso não piorar o equilíbrio de notas já alcançado em mais de 1 ponto.
+  // jogador se isso não piorar o equilíbrio de notas já alcançado em mais que
+  // TOLERANCIA_PERCENTUAL_AJUSTE_FINO (% da média de pontos por time — não um ponto
+  // fixo, porque 1 ponto pesa muito mais numa pelada pequena do que numa grande).
   // Ou seja: altura nunca tem força pra desfazer o que já está balanceado por nota,
   // só refina quando dá — mesmo espírito do passo que evita duplas repetidas.
+  const mediaTimes = mediaPontosPorTime(teams);
   for(let rodada=0; rodada<20; rodada++){
     let melhor = null, melhorGanho = 0;
     for(let ta=0; ta<numTeams; ta++){
@@ -4820,7 +4905,8 @@ function equilibrarAltura(teams, numTeams, tetoCincoEstrelas, gruposMap){
             const novoTa = teams[ta].slice(); novoTa[ia]=pb;
             const novoTb = teams[tb].slice(); novoTb[ib]=pa;
             const diffNotasDepois = Math.abs(somaTime(novoTa) - somaTime(novoTb));
-            if(diffNotasDepois > diffNotasAntes + 1) return; // não piora o equilíbrio de nota em mais de 1 ponto
+            const pioraPercentual = mediaTimes > 0 ? ((diffNotasDepois - diffNotasAntes) / mediaTimes) * 100 : 0;
+            if(pioraPercentual > TOLERANCIA_PERCENTUAL_AJUSTE_FINO) return; // não piora o equilíbrio de nota além da tolerância (%)
             if(ganho > melhorGanho){
               melhorGanho = ganho;
               melhor = { ta, tb, ia, ib };
@@ -4838,10 +4924,12 @@ function equilibrarAltura(teams, numTeams, tetoCincoEstrelas, gruposMap){
 
 function evitarDuplasRepetidas(teams, numTeams, tetoCincoEstrelas, gruposMap){
   // tenta separar duplas que já jogaram muito juntas nas últimas rodadas, trocando jogadores
-  // entre times — só faz a troca se ISSO NÃO piorar o equilíbrio de notas em mais de 1 ponto,
-  // pra não desfazer o trabalho da etapa de equilíbrio anterior
+  // entre times — só faz a troca se ISSO NÃO piorar o equilíbrio de notas em mais que
+  // TOLERANCIA_PERCENTUAL_AJUSTE_FINO (% da média de pontos por time), pra não desfazer
+  // o trabalho da etapa de equilíbrio anterior de um jeito desproporcional ao tamanho do jogo
   const recentCounts = contarDuplasRecentes(roundsOficiais(), 5);
   if(Object.keys(recentCounts).length===0) return; // sem histórico recente, nada a evitar
+  const mediaTimes = mediaPontosPorTime(teams);
 
   function penalidadeTime(team){
     let p=0;
@@ -4871,7 +4959,8 @@ function evitarDuplasRepetidas(teams, numTeams, tetoCincoEstrelas, gruposMap){
             const novoTb = teams[tb].slice(); novoTb[ib]=pa;
             const ganho = penAntes - (penalidadeTime(novoTa) + penalidadeTime(novoTb));
             const diffDepois = Math.abs(somaTime(novoTa) - somaTime(novoTb));
-            if(ganho > melhorGanho && diffDepois <= diffAntes + 1){
+            const pioraPercentual = mediaTimes > 0 ? ((diffDepois - diffAntes) / mediaTimes) * 100 : 0;
+            if(ganho > melhorGanho && pioraPercentual <= TOLERANCIA_PERCENTUAL_AJUSTE_FINO){
               melhorGanho = ganho;
               melhor = { ta, tb, ia, ib };
             }
@@ -4930,14 +5019,20 @@ function equilibrarTimes(teams, numTeams, tetoCincoEstrelas, gruposMap){
   // jogadores de nota parecida (inclusive 5 estrelas) no mesmo time.
   // A troca é sempre entre jogadores do MESMO sexo, pra nunca mudar a meta exata de
   // mulheres por time definida na montagem inicial. Tamanho do time também nunca muda aqui.
+  //
+  // PRIORIDADE: equilíbrio em PORCENTAGEM, não em ponto fixo — por isso não existe mais
+  // um corte tipo "para quando a diferença cai pra 1 ponto". 1 ponto numa pelada pequena
+  // (soma baixa) é um desequilíbrio bem maior, em %, do que numa pelada grande — então o
+  // laço só para quando os dois times já empataram OU quando nenhuma troca melhora mais
+  // (isso já busca o menor desequilíbrio percentual possível pra cada tamanho de jogo).
   for(let rodada=0; rodada<40; rodada++){
     let maxT=0, minT=0;
     for(let i=1;i<numTeams;i++){
       if(somaTime(teams[i]) > somaTime(teams[maxT])) maxT=i;
       if(somaTime(teams[i]) < somaTime(teams[minT])) minT=i;
     }
+    if(maxT===minT) break; // já está totalmente equilibrado
     const diffAtual = somaTime(teams[maxT]) - somaTime(teams[minT]);
-    if(maxT===minT || diffAtual <= 1) break; // já está equilibrado o suficiente
 
     let melhorTroca = null, melhorDiff = diffAtual;
     teams[maxT].forEach((pa, ia)=>{
@@ -5047,6 +5142,84 @@ function compartilharNoWhatsApp(texto){
   window.open('https://wa.me/?text=' + encodeURIComponent(texto), '_blank');
 }
 
+/* Copia o texto pra área de transferência — existe porque o link wa.me nem sempre abre
+   direto o WhatsApp (depende do navegador/aparelho); copiando, a pessoa sempre consegue
+   colar manualmente na conversa que quiser. */
+function copiarTexto(texto, btn){
+  function marcarCopiado(){
+    btn.classList.add('copiado');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="ti ti-check"></i>';
+    setTimeout(()=>{ btn.innerHTML = original; btn.classList.remove('copiado'); }, 1500);
+  }
+  function falhou(){
+    alert('Não foi possível copiar automaticamente. Selecione e copie o texto manualmente.');
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(texto).then(marcarCopiado).catch(falhou);
+    return;
+  }
+  // fallback pra navegador sem Clipboard API
+  const ta = document.createElement('textarea');
+  ta.value = texto; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand('copy'); marcarCopiado(); } catch(e){ falhou(); }
+  document.body.removeChild(ta);
+}
+
+// compartilhamento nativo do aparelho (abre o menu "compartilhar" do sistema, com
+// WhatsApp e qualquer outro app instalado) — só existe em navegadores compatíveis
+// (principalmente celular); em quem não suporta, o botão nem aparece
+function compartilharNativo(texto){
+  if(navigator.share){
+    navigator.share({text: texto}).catch(()=>{}); // cancelado pelo usuário: ignora
+  }
+}
+function temCompartilhamentoNativo(){
+  return typeof navigator.share === 'function';
+}
+
+const ICONE_WHATSAPP = '<svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12.031 0C5.437 0 .062 5.373.062 11.984c0 2.107.55 4.09 1.51 5.813L0 24l6.35-1.664a11.925 11.925 0 005.681 1.447h.005c6.594 0 11.968-5.373 11.968-11.985C24.004 5.373 18.63.007 12.03.007zm0 21.746h-.004a9.75 9.75 0 01-4.978-1.363l-.357-.213-3.702.972.988-3.612-.233-.371a9.717 9.717 0 01-1.492-5.176c0-5.376 4.375-9.75 9.782-9.75 2.613 0 5.07 1.02 6.916 2.868a9.72 9.72 0 012.865 6.918c-.001 5.377-4.376 9.727-9.785 9.727z"/></svg>';
+
+// monta o trio de botões compactos (WhatsApp / compartilhar nativo / copiar) que
+// acompanha todo texto pronto pra compartilhar — reaproveitado nos lugares do app
+// que geram esse tipo de mensagem (check-in, resumo semanal, grupos, times sorteados)
+function botoesCompartilharHtml(idPrefix){
+  return `
+    <button type="button" class="btn secondary btn-icon" id="${idPrefix}-whatsapp-btn" title="Compartilhar no WhatsApp">${ICONE_WHATSAPP}</button>
+    ${botoesExtraCompartilharHtml(idPrefix)}
+  `;
+}
+// só nativo+copiar, sem o de WhatsApp — usado onde o botão do WhatsApp já existe
+// separado (com texto), como no "Resumo da semana" do dashboard
+function botoesExtraCompartilharHtml(idPrefix){
+  return `
+    ${temCompartilhamentoNativo() ? `<button type="button" class="btn secondary btn-icon" id="${idPrefix}-nativo-btn" title="Compartilhar (outros apps)"><i class="ti ti-share-3"></i></button>` : ''}
+    <button type="button" class="btn secondary btn-icon" id="${idPrefix}-copiar-btn" title="Copiar texto"><i class="ti ti-copy"></i></button>
+  `;
+}
+// liga os botões gerados por botoesCompartilharHtml()/botoesExtraCompartilharHtml() a uma
+// função que devolve o texto atual (função, não string pronta, porque em alguns casos o
+// texto muda depois do botão já estar na tela)
+function wireBotoesCompartilhar(idPrefix, getTexto){
+  // getTexto pode devolver '' quando não há nada pra compartilhar (ela mesma já avisa
+  // com alert nesse caso) — cada botão calcula o texto só uma vez por clique.
+  // O botão de WhatsApp é opcional aqui: em telas que já têm um botão de WhatsApp com
+  // texto próprio (ex: Resumo da semana), só os extras (nativo/copiar) são gerados.
+  const whatsappBtn = document.getElementById(`${idPrefix}-whatsapp-btn`);
+  if(whatsappBtn) whatsappBtn.addEventListener('click', ()=>{
+    const texto = getTexto(); if(texto) compartilharNoWhatsApp(texto);
+  });
+  const nativoBtn = document.getElementById(`${idPrefix}-nativo-btn`);
+  if(nativoBtn) nativoBtn.addEventListener('click', ()=>{
+    const texto = getTexto(); if(texto) compartilharNativo(texto);
+  });
+  const copiarBtn = document.getElementById(`${idPrefix}-copiar-btn`);
+  if(copiarBtn) copiarBtn.addEventListener('click', ()=>{
+    const texto = getTexto(); if(texto) copiarTexto(texto, copiarBtn);
+  });
+}
+
 /* ---------- RESUMO SEMANAL PRO WHATSAPP ---------- */
 function montarResumoSemanal(){
   let texto = `🏐 *Resumo da semana* — Vôlei Meme Brasil\n\n`;
@@ -5089,9 +5262,8 @@ function montarResumoSemanal(){
 
   return texto;
 }
-document.getElementById('share-weekly-whatsapp-btn').addEventListener('click', ()=>{
-  compartilharNoWhatsApp(montarResumoSemanal());
-});
+document.getElementById('share-weekly-extra-area').innerHTML = botoesExtraCompartilharHtml('share-weekly');
+wireBotoesCompartilhar('share-weekly', montarResumoSemanal);
 
 let AUTO_GROUPS = [];
 
@@ -5124,15 +5296,22 @@ function renderGroupsInto(containerId, grupos, rerenderFn){
 function renderManualGroups(){
   renderGroupsInto('manual-groups', MANUAL_GROUPS, renderManualGroups);
   document.getElementById('iniciar-sorteio-manual-btn').style.display = MANUAL_GROUPS.length ? 'inline-block' : 'none';
-  document.getElementById('share-groups-whatsapp-btn').style.display = MANUAL_GROUPS.length ? 'inline-block' : 'none';
+  const area = document.getElementById('share-groups-whatsapp-area');
+  area.style.display = MANUAL_GROUPS.length ? 'contents' : 'none';
+  if(MANUAL_GROUPS.length){
+    area.innerHTML = botoesCompartilharHtml('share-groups');
+    wireBotoesCompartilhar('share-groups', ()=> montarTextoWhatsApp('Grupos do sorteio', MANUAL_GROUPS, 'Grupo'));
+  }
 }
-document.getElementById('share-groups-whatsapp-btn').addEventListener('click', ()=>{
-  compartilharNoWhatsApp(montarTextoWhatsApp('Grupos do sorteio', MANUAL_GROUPS, 'Grupo'));
-});
 
 function renderAutoGroups(){
   renderGroupsInto('auto-groups', AUTO_GROUPS, renderAutoGroups);
-  document.getElementById('sortear-com-grupos-btn').style.display = AUTO_GROUPS.length ? 'inline-block' : 'none';
+  document.getElementById('auto-groups-acoes').style.display = AUTO_GROUPS.length ? 'flex' : 'none';
+  const area = document.getElementById('share-groups-auto-whatsapp-area');
+  if(AUTO_GROUPS.length){
+    area.innerHTML = botoesCompartilharHtml('share-groups-auto');
+    wireBotoesCompartilhar('share-groups-auto', ()=> montarTextoWhatsApp('Grupos do sorteio', AUTO_GROUPS, 'Grupo'));
+  }
 }
 document.getElementById('montar-grupos-auto-btn').addEventListener('click', ()=>{
   if(SELECTED_IDS.size < 2){
@@ -5312,13 +5491,14 @@ function renderDraftResult(){
   const somas = DRAFT_TEAMS.map(somaTime);
   const diff = somas.length ? Math.max(...somas) - Math.min(...somas) : 0;
   const equilibrio = Math.max(0, Math.min(100, Math.round(100 - diff*12)));
+  const nivel = equilibrio >= 85 ? 'nivel-alto' : (equilibrio < 60 ? 'nivel-baixo' : '');
   container.innerHTML = `
-    <div class="equilibrio-badge" title="Baseado na diferença de soma de notas entre o time mais forte e o mais fraco">
+    <div class="equilibrio-badge ${nivel}" title="Baseado na diferença de soma de notas entre o time mais forte e o mais fraco">
       ⚖️ Equilíbrio deste sorteio: <strong>${equilibrio}%</strong>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+    <div class="acoes-linha">
       <button class="btn" id="send-to-rodada-btn">Usar esses times na Nova Rodada</button>
-      <button class="btn secondary" id="share-teams-whatsapp-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" style="vertical-align:-2px;margin-right:2px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12.031 0C5.437 0 .062 5.373.062 11.984c0 2.107.55 4.09 1.51 5.813L0 24l6.35-1.664a11.925 11.925 0 005.681 1.447h.005c6.594 0 11.968-5.373 11.968-11.985C24.004 5.373 18.63.007 12.03.007zm0 21.746h-.004a9.75 9.75 0 01-4.978-1.363l-.357-.213-3.702.972.988-3.612-.233-.371a9.717 9.717 0 01-1.492-5.176c0-5.376 4.375-9.75 9.782-9.75 2.613 0 5.07 1.02 6.916 2.868a9.72 9.72 0 012.865 6.918c-.001 5.377-4.376 9.727-9.785 9.727z"/></svg>Compartilhar times no WhatsApp</button>
+      ${botoesCompartilharHtml('share-teams')}
     </div>
     <div class="draft-grid" id="draft-grid"></div>`;
   const grid = document.getElementById('draft-grid');
@@ -5346,9 +5526,7 @@ function renderDraftResult(){
   }).join('');
   wireDragAndDrop();
   document.getElementById('send-to-rodada-btn').addEventListener('click', sendDraftToRodada);
-  document.getElementById('share-teams-whatsapp-btn').addEventListener('click', ()=>{
-    compartilharNoWhatsApp(montarTextoWhatsApp('Times sorteados', DRAFT_TEAMS, 'Time'));
-  });
+  wireBotoesCompartilhar('share-teams', ()=> montarTextoWhatsApp('Times sorteados', DRAFT_TEAMS, 'Time'));
 }
 
 function sendDraftToRodada(){
