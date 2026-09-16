@@ -232,11 +232,15 @@
   @media (max-width:640px){.scoreboard{grid-template-columns:1fr;}}
   .sb-label{position:relative;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ball-yellow);font-weight:700;margin:0 0 8px;}
   .sb-team{position:relative;font-family:'Anton',sans-serif;font-size:44px;text-transform:uppercase;margin:0 0 8px;line-height:1.02;}
-  /* empate entre até 2 times: cada time ganha um bloco menor lado a lado, com um "✕" no meio */
-  .sb-empate-teams{position:relative;display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;}
-  .sb-empate-team{flex:1;min-width:160px;}
-  .sb-team-mini{font-size:24px;margin-bottom:6px;}
-  .sb-empate-x{font-family:'Anton',sans-serif;font-size:22px;color:var(--muted);align-self:center;padding-top:6px;}
+  /* empate entre até 2 times: cada time ganha um bloco compacto lado a lado (só nome + avatares),
+     com um "✕" no meio — a lista completa de jogadores fica pro verso da carta (flip), então aqui
+     não precisa repetir tudo duas vezes e o quadro não cresce muito mais que a versão de 1 campeão */
+  .sb-empate-teams{position:relative;display:flex;gap:10px;align-items:flex-start;}
+  .sb-empate-team{flex:1;min-width:0;}
+  .sb-team-mini{font-size:20px;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .sb-empate-x{font-family:'Anton',sans-serif;font-size:18px;color:var(--muted);align-self:center;padding-top:2px;flex:none;}
+  .sb-avatars-mini{margin-bottom:0;}
+  .sb-avatars-mini .sb-avatar-wrap{transform:scale(0.85);transform-origin:left center;}
   .sb-date{
     position:relative;display:inline-block;font-family:'Space Mono',monospace;
     color:var(--chalk-dim);font-size:12px;letter-spacing:0.5px;
@@ -1402,7 +1406,7 @@
   </div>
 
   <footer class="app-footer">
-    <div class="footer-line">Ver.: 5.14 · <span id="visit-counter"></span></div>
+    <div class="footer-line">Ver.: 5.15 · <span id="visit-counter"></span></div>
     <div class="footer-line">By: <a href="https://www.instagram.com/helenovilela/" target="_blank" rel="noopener noreferrer" class="footer-link">Heleno Vilela</a> — todos direitos reservados</div>
     <div class="footer-line"><span class="footer-link-discreto" id="report-bug-btn">Informar bug / sugerir funcionalidade</span></div>
   </footer>
@@ -3599,16 +3603,23 @@ function renderDashboard(){
     const rotuloBase = diasDesde > 7 ? 'Últimos Campeões' : 'Campeão da semana';
     const rotuloCampeao = empatado ? rotuloBase.replace('Campeão','Campeões') + ' (empate)' : rotuloBase;
 
-    function blocoTimeCampeaoHtml(team){
+    function blocoTimeCampeaoHtml(team, compacto){
       const names = team.playerIds.map(id=> getPlayer(id));
+      const avatares = `<div class="sb-avatars ${compacto?'sb-avatars-mini':''}">${names.map(p=>`<span class="sb-avatar-wrap" data-open-profile="${p&&p.id}" title="${p?escapeHtml(p.nome):'?'}">${avatarHtml(p,'sm')}</span>`).join('')}</div>`;
+      if(compacto){
+        // versão enxuta pro empate: nome do time + avatares (com tooltip do nome ao passar o mouse/tocar),
+        // sem repetir a lista completa de nomes/apelidos duas vezes lado a lado — isso é o que verso completo
+        // já mostra no verso da carta ("times da rodada"), então aqui só precisa dar pra reconhecer o time
+        return `<p class="sb-team sb-team-mini">${escapeHtml(team.nome)}</p>${avatares}`;
+      }
       return `
-        <p class="sb-team ${empatado?'sb-team-mini':''}">${escapeHtml(team.nome)}</p>
-        <div class="sb-avatars">${names.map(p=>`<span class="sb-avatar-wrap" data-open-profile="${p&&p.id}" title="${p?escapeHtml(p.nome):'?'}">${avatarHtml(p,'sm')}</span>`).join('')}</div>
+        <p class="sb-team">${escapeHtml(team.nome)}</p>
+        ${avatares}
         <div class="sb-players">${names.map(p=>`<span class="chip with-avatar">${avatarHtml(p,'sm')}<span><span class="clickable-name" data-open-profile="${p&&p.id}">${p?escapeHtml(p.nome):'?'}</span>${badgeIconsHtml(p&&p.id, badges)}${p&&p.apelido ? `<div class="sub">"${escapeHtml(p.apelido)}"</div>` : ''}</span></span>`).join('')}</div>`;
     }
     const corpoCampeoesHtml = empatado
-      ? `<div class="sb-empate-teams">${timesCampeoes.map(t=>`<div class="sb-empate-team">${blocoTimeCampeaoHtml(t)}</div>`).join('<div class="sb-empate-x">✕</div>')}</div>`
-      : blocoTimeCampeaoHtml(timesCampeoes[0]);
+      ? `<div class="sb-empate-teams">${timesCampeoes.map(t=>`<div class="sb-empate-team">${blocoTimeCampeaoHtml(t, true)}</div>`).join('<div class="sb-empate-x">✕</div>')}</div>`
+      : blocoTimeCampeaoHtml(timesCampeoes[0], false);
 
     hero.innerHTML = `
       <div class="flip-card-wrap" id="dash-flip-wrap">
