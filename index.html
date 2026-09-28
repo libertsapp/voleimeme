@@ -2622,7 +2622,7 @@
   </div>
 
   <footer class="app-footer">
-    <div class="footer-line">Ver.: 12.9 · <span id="visit-counter"></span></div>
+    <div class="footer-line">Ver.: 13.0 · <span id="visit-counter"></span></div>
     <div class="footer-line">By: <a href="https://www.instagram.com/helenovilela/" target="_blank" rel="noopener noreferrer" class="footer-link">Heleno Vilela</a> — todos direitos reservados</div>
     <div class="footer-line"><span class="footer-link-discreto" id="report-bug-btn">Informar bug / sugerir funcionalidade</span></div>
   </footer>
@@ -2961,7 +2961,8 @@ function finResumoFechamento(fin, data){
       criadoEm) é criada sozinha no primeiro login.
 
 ========================================================== */
-const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwkEGPXqlxSr1asfp0BRQAm-INPoNu_Nm9jJ9EUl45filI5Nkuzx8t2sE0QvrE3lyc/exec";
+/* Desde a virada (2026-09) o backend é a Edge Function meme-api do Supabase; o Apps Script do Meme fica só como reserva. */
+const SHEET_API_URL = "https://lzwmirrjpoqucwlhgkku.supabase.co/functions/v1/meme-api";
 
 /* Client ID OAuth do Google — público de propósito (o Google exige que ele apareça
    no frontend). A segurança não vem de esconder ele, e sim de duas coisas: a lista
