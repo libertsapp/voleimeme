@@ -2698,6 +2698,13 @@
         </p>
 
         <details class="dash-accordion" open>
+          <summary>30/10/2026 — v21.1: Cartão de parabéns abrindo</summary>
+          <div>
+            <p style="line-height:1.6;">Correção: o botão 🎉 Cartão de parabéns não abria nada no Meme. Agora abre a imagem normalmente.</p>
+          </div>
+        </details>
+
+        <details class="dash-accordion">
           <summary>30/10/2026 — v21.0: 🎉 Cartão de parabéns</summary>
           <div>
             <p style="line-height:1.6;">No cartão de aniversários do Início, cada aniversariante da semana ganhou o botão <strong>🎉 Cartão de parabéns</strong>: uma imagem colorida de festa (no formato de status) com a foto, o nome, a data e uma frase sorteada, pronta pra compartilhar ou baixar. Dá pra trocar a frase (🔀 Outra frase) ou escrever uma só pra aquele cartão. Organizadores e admins editam a lista de frases do grupo na ⚙️ engrenagem, em "🎂 Frases de aniversário".</p>
@@ -3339,7 +3346,7 @@
   <footer class="app-footer">
     <div class="footer-line"><span class="footer-link-discreto" id="termos-link" role="button" tabindex="0">Termos de uso</span><span class="footer-sep" aria-hidden="true">·</span><span class="footer-link-discreto" id="report-bug-btn" role="button" tabindex="0">Enviar sugestão ou problema</span></div>
     <!-- data-versao: os apps instalados procuram o número de versão neste atributo do HTML publicado pra saber se há versão nova (checarVersaoNova) -->
-    <div class="footer-line footer-meta">© 2026 <a href="https://www.instagram.com/helenovilela/" target="_blank" rel="noopener noreferrer" class="footer-link">Heleno Vilela</a><span class="footer-sep" aria-hidden="true">·</span><span id="footer-versao" data-versao="Ver.: 21.0">v21.0</span><span class="footer-sep" aria-hidden="true">·</span><span id="visit-counter"></span></div>
+    <div class="footer-line footer-meta">© 2026 <a href="https://www.instagram.com/helenovilela/" target="_blank" rel="noopener noreferrer" class="footer-link">Heleno Vilela</a><span class="footer-sep" aria-hidden="true">·</span><span id="footer-versao" data-versao="Ver.: 21.1">v21.1</span><span class="footer-sep" aria-hidden="true">·</span><span id="visit-counter"></span></div>
   </footer>
 </div>
 
@@ -13523,7 +13530,7 @@ async function desenharCartaoParabens(player, dataIso, frase){
   retroTexto(ctx, 'ANIVERSÁRIO', W/2, 410, 700, 150, "{t} Anton, sans-serif");
   ctx.shadowBlur = 8; ctx.shadowOffsetY = 3;
   ctx.fillStyle = 'rgba(255,255,255,.92)';
-  retroTexto(ctx, nomeDoApp(), W/2, 480, 700, 40, "600 {t} 'Work Sans', sans-serif");
+  retroTexto(ctx, 'Vôlei Meme Brasil', W/2, 480, 700, 40, "600 {t} 'Work Sans', sans-serif");
 
   // foto num círculo dourado (ou a inicial)
   const cx = W/2, cy = 820, raio = 230;
@@ -13574,7 +13581,7 @@ async function desenharCartaoParabens(player, dataIso, frase){
   ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
 
   ctx.fillStyle = 'rgba(255,255,255,.85)';
-  retroTexto(ctx, linkDoApp(CTX_GRUPO).replace('https://', ''), W/2, 1850, 900, 30, "{t} 'Space Mono', monospace");
+  retroTexto(ctx, linkDoAppMeme().replace('https://', ''), W/2, 1850, 900, 30, "{t} 'Space Mono', monospace");
   return canvas;
 }
 async function abrirCartaoParabens(playerId, dataIso){
@@ -13583,7 +13590,7 @@ async function abrirCartaoParabens(playerId, dataIso){
   const lista = frasesDoGrupo(SETTINGS);
   const nomeCurto = player.apelido || String(player.nome || '').split(' ')[0];
   let modelo = sortearFrase(lista, '');
-  let frase = montarFrase(modelo, nomeCurto, nomeDoApp());
+  let frase = montarFrase(modelo, nomeCurto, 'Vôlei Meme Brasil');
   let url = '', arquivo = null, versao = 0;
   const nomeArquivo = 'parabens-' + String(nomeCurto).toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.png';
   const montar = async ()=>{
@@ -13636,12 +13643,12 @@ async function abrirCartaoParabens(playerId, dataIso){
     if(e.target === overlay || e.target.closest('[data-acao="fechar"]')) return fechar();
     if(e.target.closest('[data-acao="outra"]')){
       modelo = sortearFrase(lista, modelo);
-      frase = montarFrase(modelo, nomeCurto, nomeDoApp());
+      frase = montarFrase(modelo, nomeCurto, 'Vôlei Meme Brasil');
       campo.value = frase;
       montar();
     }
     if(e.target.closest('[data-acao="compartilhar"]') && arquivo){
-      navigator.share({ files: [arquivo], text: '🎂 Parabéns, ' + nomeCurto + '! ' + linkDoApp(CTX_GRUPO) }).catch(()=>{}); // cancelado: ignora
+      navigator.share({ files: [arquivo], text: '🎂 Parabéns, ' + nomeCurto + '! ' + linkDoAppMeme() }).catch(()=>{}); // cancelado: ignora
     }
     if(e.target.closest('[data-acao="baixar"]')){
       const a = document.createElement('a');
