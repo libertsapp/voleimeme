@@ -2067,8 +2067,8 @@
   /* gorro: no logo, nos cartões e avatares dos campeões do Início */
   /* no Meme o logo é uma <img> (sem ::after): o gorro fica preso ao bloco do logo, por cima do canto do escudo */
   html.tema-natal .brand{position:relative;}
-  html.tema-natal .brand::before{content:'';position:absolute;left:-12px;top:-16px;width:36px;height:33px;z-index:1;pointer-events:none;
-    background:var(--natal-gorro) no-repeat center/contain;transform:rotate(-18deg);filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));}
+  html.tema-natal .brand::before{content:'';position:absolute;left:7px;top:-19px;width:36px;height:33px;z-index:1;pointer-events:none;
+    background:var(--natal-gorro) no-repeat center/contain;transform:rotate(-10deg);filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));}
   html.tema-natal #dash-hero .jc-anel{position:relative;}
   html.tema-natal #dash-hero .jc-anel::after{content:'';position:absolute;left:22%;top:-40%;width:82%;aspect-ratio:40/36;z-index:2;pointer-events:none;
     background:var(--natal-gorro) no-repeat center/contain;transform:rotate(14deg);filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));}
@@ -2756,6 +2756,13 @@
         </p>
 
         <details class="dash-accordion" open>
+          <summary>31/10/2026 — v21.8: 🎅 Gorro centralizado no escudo</summary>
+          <div>
+            <p style="line-height:1.6;">O gorro de Natal do logo agora fica centralizado em cima do escudo.</p>
+          </div>
+        </details>
+
+        <details class="dash-accordion">
           <summary>31/10/2026 — v21.7: 🎄 Tema de Natal</summary>
           <div>
             <p style="line-height:1.6;">De 1º de dezembro a 6 de janeiro o app entra no clima: pisca-pisca no topo, neve leve no Início, gorro de Papai Noel no logo e nos campeões da semana, e o cartão <strong>🎄 Árvore do grupo</strong> — as fotos de todo mundo que jogou no ano formando um pinheiro, pra compartilhar.</p>
@@ -3446,7 +3453,7 @@
   <footer class="app-footer">
     <div class="footer-line"><span class="footer-link-discreto" id="termos-link" role="button" tabindex="0">Termos de uso</span><span class="footer-sep" aria-hidden="true">·</span><span class="footer-link-discreto" id="report-bug-btn" role="button" tabindex="0">Enviar sugestão ou problema</span></div>
     <!-- data-versao: os apps instalados procuram o número de versão neste atributo do HTML publicado pra saber se há versão nova (checarVersaoNova) -->
-    <div class="footer-line footer-meta">© 2026 <a href="https://www.instagram.com/helenovilela/" target="_blank" rel="noopener noreferrer" class="footer-link">Heleno Vilela</a><span class="footer-sep" aria-hidden="true">·</span><span id="footer-versao" data-versao="Ver.: 21.7">v21.7</span><span class="footer-sep" aria-hidden="true">·</span><span id="visit-counter"></span></div>
+    <div class="footer-line footer-meta">© 2026 <a href="https://www.instagram.com/helenovilela/" target="_blank" rel="noopener noreferrer" class="footer-link">Heleno Vilela</a><span class="footer-sep" aria-hidden="true">·</span><span id="footer-versao" data-versao="Ver.: 21.8">v21.8</span><span class="footer-sep" aria-hidden="true">·</span><span id="visit-counter"></span></div>
   </footer>
 </div>
 
